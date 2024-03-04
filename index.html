@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/47647802a6.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onclick>
 
     <nav>
         <div class="container">
@@ -47,6 +47,11 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div id="resBar">
+                <a class="navbar-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
             </div>
         </div>
     </nav>
@@ -328,6 +333,17 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $('.navbar-icon').click(function () {
+            $('#menu').toggleClass("responsive");
+            return false;
+        })
+    </script>
+
+
 
 </body>
 

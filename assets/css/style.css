@@ -28,6 +28,10 @@ body {
   background-color: var(--primary-color);
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 a {
   text-decoration: none;
 }
@@ -87,6 +91,9 @@ nav .container #menu ul li a.active:hover {
   border-radius: 99px;
   transform: scale(1.2);
 }
+nav .container #resBar {
+  display: none;
+}
 
 header {
   background-color: var(--primary-color);
@@ -133,9 +140,8 @@ header .container .left a:hover {
 header .container .right img {
   width: 475px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 
@@ -153,9 +159,8 @@ section#yasmin .container {
 section#yasmin .container .left img {
   width: 350px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 section#yasmin .container .right h2 {
@@ -215,10 +220,9 @@ section#services .container .title h2::after {
 section#services .container .serviceList {
   margin-top: 5rem;
   -moz-column-count: 3;
-       column-count: 3;
+  column-count: 3;
 }
 section#services .container .serviceList .item {
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   width: 100%;
@@ -280,9 +284,8 @@ section#organization {
 section#organization .container img {
   pointer-events: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 section#organization .container .title {
   text-align: center;
@@ -321,7 +324,7 @@ section#organization .container .orgList .item .left img {
   width: 275px;
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 8px;
 }
 section#organization .container .orgList .item .right {
@@ -395,9 +398,8 @@ footer .container .item img {
   width: 300px;
   margin-left: -18px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   pointer-events: none;
 }
 footer .container .item p {
@@ -446,7 +448,7 @@ footer .container .item ul li a:hover {
 @media screen and (max-width: 900px) {
   section#services .container .serviceList {
     -moz-column-count: 2;
-         column-count: 2;
+    column-count: 2;
   }
   section#services .container .serviceList .item .name {
     margin: 1rem 0 0.6rem 0;
@@ -513,6 +515,56 @@ footer .container .item ul li a:hover {
     position: static;
   }
 }
+@media screen and (max-width: 650px) {
+  header {
+    padding-top: 12.5rem;
+  }
+  nav .container #menu {
+    display: none;
+  }
+  nav .container #menu.responsive {
+    display: block;
+  }
+  nav .container #resBar {
+    display: block;
+  }
+  nav .container {
+    display: block;
+  }
+  nav .container #logo a {
+    width: 50px;
+  }
+  nav .container #logo a img {
+    width: 50px;
+  }
+  nav .container #menu ul {
+    margin-top: 2rem;
+    display: block;
+  }
+  nav .container #menu ul li {
+    margin-bottom: 1rem;
+  }
+  nav .container #menu ul li:not(:has(> a.active)) {
+    padding: 0.4rem;
+    border-radius: 4px;
+  }
+  nav .container #menu ul li:not(:has(> a.active)):hover {
+    background-color: var(--button-color);
+  }
+  nav .container #menu ul li:not(:has(> a.active)):hover a {
+    color: #fff;
+  }
+  nav .container #menu ul li:has(> a.active) {
+    margin-left: 5px;
+  }
+  nav .container #resBar a {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 1.4em;
+  }
+}
 @media screen and (max-width: 500px) {
   header .container .left h1 {
     font-size: 3em;
@@ -524,9 +576,15 @@ footer .container .item ul li a:hover {
     width: 275px;
     left: 0;
   }
+  header .container .right img {
+    width: 100%;
+  }
   section#yasmin .container .left {
     width: 275px;
     left: 0;
+  }
+  section#yasmin .container .left img {
+    width: 100%;
   }
   section#yasmin .container .right h2 {
     font-size: 3em;
@@ -536,6 +594,10 @@ footer .container .item ul li a:hover {
   }
   section#services .container .title h2 {
     font-size: 3em;
+  }
+  section#services .container .serviceList {
+    -moz-column-count: 1;
+    column-count: 1;
   }
   section#organization .container .title h2 {
     font-size: 2em;
@@ -549,12 +611,6 @@ footer .container .item ul li a:hover {
   }
   section#organization .container .orgList .item .right .date span i {
     font-size: 1.2em;
-  }
-}
-@media screen and (max-width: 400px) {
-  section#services .container .serviceList {
-    -moz-column-count: 1;
-         column-count: 1;
   }
 }
 @media screen and (max-width: 300px) {
